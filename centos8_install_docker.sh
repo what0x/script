@@ -3,7 +3,6 @@
 . /etc/init.d/functions
 COLOR="echo -e \e[1;31m"
 END="\e[0m"
-DOCKER_VERSION="-19.03.15-3.el8"
  
 ${COLOR}"Begin install docker, Please wait..."${END}
 install_docker(){
@@ -16,7 +15,7 @@ EOF
  
 yum clean all &> /dev/null
 yum erase podman buildah -y  &> /dev/null
-dnf install docker-ce${DOCKER_VERSION} docker-ce-cli${DOCKER_VERSION} -y &> /dev/null \
+dnf install docker-ce docker-ce-cli -y &> /dev/null \
 || { ${COLOR}"Base,Extras yum is fail,Please check yum"${END};exit; }
  
 mkdir -p /etc/docker
