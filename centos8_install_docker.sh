@@ -15,6 +15,7 @@ baseurl=https://mirrors.aliyun.com/docker-ce/linux/centos/8/x86_64/stable/
 EOF
  
 yum clean all &> /dev/null
+yum erase podman buildah -y  &> /dev/null
 dnf install docker-ce${DOCKER_VERSION} docker-ce-cli${DOCKER_VERSION} -y &> /dev/null \
 || { ${COLOR}"Base,Extras yum is fail,Please check yum"${END};exit; }
  
