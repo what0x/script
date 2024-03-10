@@ -21,7 +21,7 @@ dnf install docker-ce docker-ce-cli -y &> /dev/null \
 mkdir -p /etc/docker
 cat > /etc/docker/daemon.json <<EOF
 {
-  "registry-mirrors": ["https://359902n4.mirror.aliyuncs.com"]
+  "registry-mirrors": ["https://eph8xfli.mirror.aliyuncs.com"]
 }
 EOF
 systemctl daemon-reload
